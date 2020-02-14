@@ -1,24 +1,11 @@
-
-using System.Collections.Generic;
-
-public class Node
-{
-    public Dictionary<char, Node> childrens { get; set; }
-    public bool isWord = false;
-    public Node()
-    {
-        childrens = new Dictionary<char, Node>();
-    }
-}
-
 public class Trie
 {
 
-    private readonly Node root;
+    private readonly TrieNode root;
     /** Initialize your data structure here. */
     public Trie()
     {
-        root = new Node();
+        root = new TrieNode();
     }
 
     /** Inserts a word into the trie. */
@@ -27,7 +14,7 @@ public class Trie
         Insert(word, root);
     }
 
-    private void Insert(string word, Node node)
+    private void Insert(string word, TrieNode node)
     {
         if (word.Length == 0)
         {
@@ -38,10 +25,11 @@ public class Trie
         var letter = word[0];
         if (!node.childrens.ContainsKey(letter))
         {
-            node.childrens[letter] = new Node();
+            node.childrens[letter] = new TrieNode();
         }
 
         var currentNode = node.childrens[letter];
+
         Insert(word.Substring(1), currentNode);
     }
 
@@ -51,7 +39,7 @@ public class Trie
         return Search(word, root);
     }
 
-    private bool Search(string word, Node node)
+    private bool Search(string word, TrieNode node)
     {
         if (node.isWord && word.Length == 0) return true;
         if (word.Length == 0) return false;
@@ -70,7 +58,7 @@ public class Trie
         return StartsWith(prefix, root);
     }
 
-    private bool StartsWith(string prefix, Node node)
+    private bool StartsWith(string prefix, TrieNode node)
     {
         if (prefix.Length == 0) return true;
         var letter = prefix[0];

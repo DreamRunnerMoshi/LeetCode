@@ -42,6 +42,7 @@ public class Trie
         }
 
         var currentNode = node.childrens[letter];
+
         Insert(word.Substring(1), currentNode);
     }
 
@@ -77,5 +78,10 @@ public class Trie
         if (!node.childrens.ContainsKey(letter)) return false;
 
         return StartsWith(prefix.Substring(1), node.childrens[letter]);
+    }
+
+    public Node GetRootNode()
+    {
+        return root;
     }
 }
