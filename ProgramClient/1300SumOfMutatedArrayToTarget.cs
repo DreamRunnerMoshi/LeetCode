@@ -14,21 +14,19 @@ namespace ProgramClient
 
             var count = arr.Length;
 
-            //finding two elements to find target in between
 
-            //int currentSum = arr[0] + (count - 1) * arr[0];
-
-            //if (currentSum > target)
-            //{
-            //    int value = (int)(target / count);
-            //    int leftValue = Math.Abs((value * count) - target);
-            //    int rightValue = Math.Abs(((value + 1) * count) - target);
-            //    return leftValue > rightValue ? value + 1 : value;
-            //}
+            /* when target is less than the (smallestValue *count) */
+            int currentSum = arr[0] + (count - 1) * arr[0];
+            if (currentSum > target)
+            {
+                return FindTargetWhenSmaller(target, count);
+            }
 
             int left = 0, right = 0;
             int rightCount = count - 1;
             int leftSum = 0;
+            
+            //finding two numbers to find target in between
 
             for (int i = 0; i < count; i++)
             {
@@ -78,6 +76,14 @@ namespace ProgramClient
             }
 
             return result;
+        }
+
+        private int FindTargetWhenSmaller(int target, int count)
+        {
+            int value = (int)(target / count);
+            int leftValue = Math.Abs((value * count) - target);
+            int rightValue = Math.Abs(((value + 1) * count) - target);
+            return leftValue > rightValue ? value + 1 : value;
         }
     }
 }
