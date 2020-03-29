@@ -7,17 +7,18 @@ namespace ProgramClient
 {
     public static class ExtentionMethods
     {
-        public static List<List<T>> Partition<T>(this List<T> items, Func<T, T> canonicalize)
+        public static IEnumerable<IEnumerable<T>> Partition<T>(this IEnumerable<T> items, Func<T, T> canonicalize)
         {
-            return items.GroupBy(_ => canonicalize(_)).Select(_ => _.ToList()).ToList();
-            //var anagramsTable = new Multidictionary<T, T>();
-
-            //items.Select(_=> anagramsTable.Add(canonicalize(_)),str);
-
-            //foreach (string str in items)
-            //{
-            //    anagramsTable.Add(canonicalize(str), str);
-            //}
+            return items.GroupBy(_ => canonicalize(_)).Select(_ => _);
         }
+        //var anagramsTable = new Multidictionary<T, T>();
+
+        //items.Select(_=> anagramsTable.Add(canonicalize(_)),str);
+
+        //foreach (string str in items)
+        //{
+        //    anagramsTable.Add(canonicalize(str), str);
+        //}
+        //}
     }
 }

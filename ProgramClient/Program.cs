@@ -1,7 +1,9 @@
 ﻿using Algorithms;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text;
 
 namespace ProgramClient
 {
@@ -9,7 +11,14 @@ namespace ProgramClient
     {
         static void Main(string[] args)
         {
-            // var lnrs = new LongestSubstringWithoutRepeating();
+            var c = new _1377FrogPositionAfterTSeconds();
+
+            var graph = new int[][]{
+                new []{1, 2 },new []{1, 3 },new []{1, 7 },new []{2, 4 },new []{2, 6 },new []{3, 5 }
+            };
+            Console.WriteLine(c.FrogPosition(7, graph, 2, 4));
+
+            // var lnrs = nsew LongestSubstringWithoutRepeating();
             // Console.WriteLine(lnrs.LengthOfLongestSubstring("pwwkew"));
             // Console.WriteLine(lnrs.LengthOfLongestSubstring("au"));
             // Console.WriteLine(lnrs.LengthOfLongestSubstring(""));
@@ -60,30 +69,27 @@ namespace ProgramClient
 
             //var multiDictionary = new Multidictionary<string, string>();
 
-            //var input = new List<string>() { "cat", "act", "door", "odor", "hello", "ohell", "me" };
+            var words = new List<string>() { "litu", "flit", "lift", "lute", "tule", "etui", "lieu", "lite", "tile", "flue", "fuel", "felt", "left", "file", "lief", "life", "flub", "bute", "tube", "blue", "lube", "belt", "blet", "bite", "bile", "luau", "latu", "alit", "lati", "tail", "tali", "tufa", "flat", "fiat", "alif", "fail", "fila", "late", "tael", "tale", "teal", "tela", "ilea", "fate", "feat", "feta", "alef", "feal", "flea", "leaf", "abut", "tabu", "tuba", "blat", "bait", "bail", "flab", "beau", "abet", "bate", "beat", "beta", "able", "bale", "blae" };
 
+           
 
-            //var groups = input.Partition(s => string.Concat(s.OrderBy(c => c)));
+            var groups = words.GroupBy(s => string.Concat(s.OrderBy(c => c)));
+            groups.Select(_=>_.Key);
+            var anagramDictionary = new Multidictionary<string, string>();
+            words.ForEach(word => anagramDictionary.Add(string.Concat(word.OrderBy(c => c)), word));
+            var anagrams = anagramDictionary.Values.Select(vs => vs);
 
-            //var anagramsTable = new Multidictionary<string, string>();
-            //foreach (string str in input)
-            //{
-            //    anagramsTable.Add(string.Concat(str.OrderBy(c => c)), str);
-            //}
-
-            //anagramsTable.Values
-            //  .Select(vs => vs.ToList())
-            //  .ToList()
-            //  .ForEach(_ =>
-            //  {
-            //      Console.Write("[");
-            //      _.ForEach(w =>
-            //      {
-            //          Console.Write(w + " ");
-            //      });
-            //      Console.Write("]");
-            //      Console.WriteLine();
-            //  });
+            anagramDictionary.Values
+              .Select(vs => vs.ToList())
+              .ToList()
+              .ForEach(_ =>
+              {
+                  _.ForEach(w =>
+                  {
+                      Console.Write(w + " ");
+                  });
+                  Console.WriteLine();
+              });
 
 
             var sln = new _1300SumOfMutatedArrayToTarget();
@@ -93,6 +99,56 @@ namespace ProgramClient
             Console.WriteLine(sln.FindBestValue(new int[] { 3, 6, 8, 10, 20 }, 35) == 9);
             Console.WriteLine(sln.FindBestValue(new int[] { 4, 6, 8, 10, 20, 35, 40 }, 92) == 22);
             Console.WriteLine(sln.FindBestValue(new int[] { 4, 9, 3 }, 10) == 3);
+
+            var addTwoNumbers = new _2_AddTwoNumbers();
+            var l1 = new ListNode(7);
+            l1.next = new ListNode(1);
+
+            var l2 = new ListNode(5);
+            l2.next = new ListNode(6);
+
+
+
+            addTwoNumbers.AddTwoNumbers(l1, l2);
+        }
+
+        public static string FindPersonWithBiggestLoss(string[] peopleAndBalances)
+        {
+            var personsWithMaxLoss = peopleAndBalances.Select(_ => new PersonWithMinLoss(_));
+            //var maxValue = personsWithMaxLoss.Max(_ => _.MaxLoss);
+            //var personWithMaxLoss = personsWithMaxLoss.Where(x => (x.MaxLoss - maxValue) < 0.0001m).First();
+            var personWithMaxLoss = personsWithMaxLoss.Aggregate((cur, next) => (cur == null || cur.MaxLoss < next.MaxLoss) ? next : cur);
+            return $"{personWithMaxLoss.Name} lost the most money. -¤{personWithMaxLoss.MaxLoss}.";
+        }
+
+    }
+
+    public class PersonWithMinLoss
+    {
+        public string Name { get; set; }
+        public decimal MaxLoss { get; set; }
+        private readonly List<decimal> Amounts;
+
+        public PersonWithMinLoss(string currentPersonData)
+        {
+            var parts = currentPersonData.Split(',');
+            this.Amounts = parts[1..]
+                .Select(_ => decimal.Parse(_, NumberStyles.Currency | NumberStyles.Number)).ToList();
+            this.Name = parts[0];
+            this.MaxLoss = GetMaxLoss();
+        }
+
+        private decimal GetMaxLoss()
+        {
+            decimal maxLoss = int.MinValue;
+
+            for (int i = 0; i < Amounts.Count - 1; i++)
+            {
+                var loss = Amounts[i] - Amounts[i + 1];
+                if (loss > maxLoss) maxLoss = loss;
+            }
+
+            return maxLoss;
         }
     }
 }
