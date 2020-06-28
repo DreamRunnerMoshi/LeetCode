@@ -1,17 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace _1004._Max_Consecutive_Ones
+namespace LeetCode.ProgramClient
 {
-    class Program
+    public class _1004MaxConsecutiveOnesIII
     {
-        static void Main(string[] args)
+        public int GetMax(string A)
         {
-            //int[] A = new int[] { 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0 };
-            int k = 3;
-
-            int[] A = new int[] { 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1 };
-            //int[] A = new int[] {0,0,1,1,1,0,0};
-
             int max = -1;
 
             int wStart = 0;
@@ -34,8 +30,7 @@ namespace _1004._Max_Consecutive_Ones
                 //while (wStart < A.Length && A[wStart] == 1) wStart++;
                 wStart++;
             }
-
-            Console.WriteLine(max);
+            return max;
         }
     }
 }
