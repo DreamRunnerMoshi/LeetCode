@@ -8,11 +8,11 @@ public class Cell
     public int colum;
 }
 
-public class WordSearchFromBoard
+public class _212WordSearchII
 {
     private readonly Trie trie;
     private HashSet<string> visited;
-    public WordSearchFromBoard()
+    public _212WordSearchII()
     {
         trie = new Trie();
     }

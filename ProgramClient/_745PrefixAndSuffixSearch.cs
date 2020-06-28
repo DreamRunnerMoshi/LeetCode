@@ -1,19 +1,20 @@
 ﻿using Algorithms;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace _745_Prefix_And_Suffix_Search
 {
-    public class WordFilter
+    /// <summary>
+    /// <see cref="https://leetcode.com/problems/prefix-and-suffix-search/"/>
+    /// </summary>
+    public class _745PrefixAndSuffixSearch
     {
         private readonly WeightedTrie weightedTree;
-        public WordFilter()
+        public _745PrefixAndSuffixSearch()
         {
             weightedTree = new WeightedTrie();
         }
-        public WordFilter(string[] words)
+        public _745PrefixAndSuffixSearch(string[] words)
         {
             for (int w = 0; w < words.Length; w++)
             {

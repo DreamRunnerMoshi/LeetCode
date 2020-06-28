@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProgramClient
 {
-    public class _496NextGreaterElement_I
+    public class _496NextGreaterElementI
     {
         public int[] NextGreaterElement(int[] nums1, int[] nums2)
         {

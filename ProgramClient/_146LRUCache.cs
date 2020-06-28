@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace ProgramClient
 {
-    public class LRUCache
+    public class _146LRUCache
     {
 
         private Queue cache;
         private readonly int capacity;
         private Dictionary<int, int> dict;
 
-        public LRUCache(int capacity)
+        public _146LRUCache(int capacity)
         {
             this.capacity = capacity;
             cache = new Queue();

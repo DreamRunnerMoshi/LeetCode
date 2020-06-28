@@ -29,7 +29,6 @@ public class Trie
         }
 
         var currentNode = node.childrens[letter];
-
         Insert(word.Substring(1), currentNode);
     }
 

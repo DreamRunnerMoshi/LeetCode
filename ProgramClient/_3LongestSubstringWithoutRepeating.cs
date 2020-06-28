@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace ProgramClient
+namespace LeetCode.ProgramClient
 {
-    public class LongestSubstringWithoutRepeating
+    public class _3LongestSubstringWithoutRepeating
     {
         public int LengthOfLongestSubstring(string s)
         {

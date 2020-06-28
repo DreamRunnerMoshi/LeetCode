@@ -12,7 +12,7 @@ namespace ProgramClient
         public ListNode(int x) { val = x; }
     }
 
-    public class _2_AddTwoNumbers
+    public class _2AddTwoNumbers
     {
         public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {

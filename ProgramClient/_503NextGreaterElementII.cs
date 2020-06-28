@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ProgramClient
 {
@@ -17,7 +15,7 @@ namespace ProgramClient
             this.Value = Value;
         }
     }
-    public class _503_Next_Greater_Element_II
+    public class _503NextGreaterElementII
     {
         public int[] NextGreaterElements(int[] nums)
         {

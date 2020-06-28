@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProgramClient
 {
-    class MedianOfTwoSortedArrays
+    public class _4MedianOfTwoSortedArrays
     {
         public double FindMedianSortedArrays(int[] num1, int[] num2)
         {
