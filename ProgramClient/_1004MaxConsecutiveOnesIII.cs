@@ -6,7 +6,7 @@ namespace LeetCode.ProgramClient
 {
     public class _1004MaxConsecutiveOnesIII
     {
-        public int GetMax(string A)
+        public int GetMax(string A, int k)
         {
             int max = -1;
 
