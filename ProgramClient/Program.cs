@@ -1,4 +1,5 @@
 ﻿using Algorithms;
+using LeetCode.ProgramClient;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,6 +12,23 @@ namespace ProgramClient
     {
         static void Main(string[] args)
         {
+
+
+            var root = new TreeNode(1);
+            root.Left = new TreeNode(6);
+            root.Left.Left = new TreeNode(66);
+            root.Left.Left.Left = new TreeNode(666);
+            root.Left.Left.Left.Left = new TreeNode(6666);
+            root.Right = new TreeNode(8);
+
+            root.Right.Left = new TreeNode(10);
+            root.Right.Right = new TreeNode(12);
+
+
+            var mx = new MaxHeightOfTree();
+
+            Console.WriteLine(mx.MaxDepth(root));
+
             var c = new _1377FrogPositionAfterTSeconds();
 
             var graph = new int[][]{
@@ -71,10 +89,10 @@ namespace ProgramClient
 
             var words = new List<string>() { "litu", "flit", "lift", "lute", "tule", "etui", "lieu", "lite", "tile", "flue", "fuel", "felt", "left", "file", "lief", "life", "flub", "bute", "tube", "blue", "lube", "belt", "blet", "bite", "bile", "luau", "latu", "alit", "lati", "tail", "tali", "tufa", "flat", "fiat", "alif", "fail", "fila", "late", "tael", "tale", "teal", "tela", "ilea", "fate", "feat", "feta", "alef", "feal", "flea", "leaf", "abut", "tabu", "tuba", "blat", "bait", "bail", "flab", "beau", "abet", "bate", "beat", "beta", "able", "bale", "blae" };
 
-           
+
 
             var groups = words.GroupBy(s => string.Concat(s.OrderBy(c => c)));
-            groups.Select(_=>_.Key);
+            groups.Select(_ => _.Key);
             var anagramDictionary = new Multidictionary<string, string>();
             words.ForEach(word => anagramDictionary.Add(string.Concat(word.OrderBy(c => c)), word));
             var anagrams = anagramDictionary.Values.Select(vs => vs);
