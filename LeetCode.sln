@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms", "Algorithms\Algorithms.csproj", "{A502064C-2E55-49B2-BDFE-D3970DD3F7F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.Algorithms", "Algorithms\LeetCode.Algorithms.csproj", "{A502064C-2E55-49B2-BDFE-D3970DD3F7F7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreesAndGraphs", "..\AmzProblemSolving\CrackingCodingInterview\TreesAndGraphs\TreesAndGraphs.csproj", "{01520B26-4EBE-41CC-B425-2A6666E7C53B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.TreesAndGraphs", "..\AmzProblemSolving\CrackingCodingInterview\TreesAndGraphs\Algorithms.TreesAndGraphs.csproj", "{01520B26-4EBE-41CC-B425-2A6666E7C53B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.ProgramClient", "ProgramClient\LeetCode.ProgramClient.csproj", "{47C730D4-2407-49C2-930A-CDD8FA39855E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.Solutions", "ProgramClient\LeetCode.Solutions.csproj", "{47C730D4-2407-49C2-930A-CDD8FA39855E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.Tests", "LeetCode.Tests\LeetCode.Tests.csproj", "{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{47C730D4-2407-49C2-930A-CDD8FA39855E}.Release|x64.Build.0 = Release|Any CPU
 		{47C730D4-2407-49C2-930A-CDD8FA39855E}.Release|x86.ActiveCfg = Release|Any CPU
 		{47C730D4-2407-49C2-930A-CDD8FA39855E}.Release|x86.Build.0 = Release|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Debug|x64.Build.0 = Debug|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Debug|x86.Build.0 = Debug|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Release|x64.ActiveCfg = Release|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Release|x64.Build.0 = Release|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Release|x86.ActiveCfg = Release|Any CPU
+		{1E87D6CF-1DB7-42A1-9348-E3926FFE9F41}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

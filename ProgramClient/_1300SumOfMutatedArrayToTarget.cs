@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LeetCode.ProgramClient
+namespace LeetCode.Solutions
 {
     public class _1300SumOfMutatedArrayToTarget
     {

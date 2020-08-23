@@ -3,11 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>LeetCode.ProgramClient</AssemblyName>
+    <AssemblyName>LeetCode.Solutions</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Algorithms\Algorithms.csproj" />
+    <ProjectReference Include="..\Algorithms\LeetCode.Algorithms.csproj" />
   </ItemGroup>
 
 </Project>
