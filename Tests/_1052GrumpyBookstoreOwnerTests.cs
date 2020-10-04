@@ -1,5 +1,4 @@
 using LeetCode.Solutions;
-using System;
 using Xunit;
 
 namespace LeetCode.Tests

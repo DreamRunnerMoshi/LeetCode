@@ -1,47 +1,18 @@
-﻿using Algorithms;
-using LeetCode.Solutions;
+﻿using LeetCode.Solutions;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace ProgramClient
 {
 
-    class A
-    {
-
-    }
-
-    class B : A
-    {
-
-    }
-
-    class C : A
-    {
-
-    }
-
-    class D : B
-    {
-
-    }
-
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            A a = new B();
-            PrintType(new B());
-            PrintType(new C());
-            PrintType(new D());
-        }
-
-        static void PrintType(A a)
-        {
-            Console.WriteLine(a.GetType().Name);
+            var largestTimeForGivenDigits = new LargestTimeForGivenDigits();
+            Console.WriteLine(largestTimeForGivenDigits.LargestTimeFromDigits(new[] { 1, 2, 3, 4 }));
+            largestTimeForGivenDigits = new LargestTimeForGivenDigits();
+            Console.WriteLine(largestTimeForGivenDigits.LargestTimeFromDigits(new[] { 5,5,5,5 }));
         }
     }
 }
