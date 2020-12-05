@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Algorithms\LeetCode.Algorithms.csproj" />
+    <ProjectReference Include="..\LeetCode.Algorithms\LeetCode.Algorithms.csproj" />
   </ItemGroup>
 
 </Project>
